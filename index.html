@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A little introduction to Kee, from South Africa.">
+  <title>Hi, I'm Kee</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #173c32;
+      --paper: #f7f6ee;
+      --leaf: #d7ed79;
+      --coral: #e2634f;
+      --muted: #64756c;
+      --line: #cbd4c8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 64px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 76px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .topbar strong {
+      color: var(--ink);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 0.82fr;
+      align-items: center;
+      gap: clamp(40px, 8vw, 112px);
+      padding: 72px 0 64px;
+    }
+
+    .intro {
+      padding: 12px 0;
+      animation: arrive 650ms ease-out both;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 25px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1 {
+      max-width: 570px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 104px;
+      font-weight: 400;
+      line-height: 0.94;
+    }
+
+    h1 span {
+      color: var(--coral);
+      font-style: italic;
+    }
+
+    .bio {
+      max-width: 390px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .interest {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: fit-content;
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .interest-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      background: var(--leaf);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+    }
+
+    .interest-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .interest strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      font-weight: 400;
+    }
+
+    figure {
+      position: relative;
+      margin: 0;
+      animation: arrive 750ms 100ms ease-out both;
+    }
+
+    figure::before {
+      position: absolute;
+      z-index: -1;
+      top: -16px;
+      right: -16px;
+      bottom: 42px;
+      left: 16px;
+      border: 1px solid var(--coral);
+      content: "";
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 0.82;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    figcaption span:last-child {
+      color: var(--coral);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @keyframes arrive {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        width: min(100% - 40px, 480px);
+      }
+
+      .topbar {
+        min-height: 64px;
+        font-size: 10px;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 56px 0 52px;
+      }
+
+      h1 {
+        font-size: 72px;
+      }
+
+      .bio {
+        font-size: 17px;
+      }
+
+      figure {
+        width: calc(100% - 16px);
+        margin-left: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <strong>Kee</strong>
+      <span>South Africa</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">A little introduction</p>
+        <h1 id="page-title">Hello,<br>I'm <span>Kee.</span></h1>
+        <p class="bio">Hey, I'm from South Africa.</p>
+        <div class="interest">
+          <span class="interest-mark" aria-hidden="true">+</span>
+          <div>
+            <span class="interest-label">I enjoy</span>
+            <strong>Exploring</strong>
+          </div>
+        </div>
+      </section>
+
+      <figure>
+        <img src="9FB7F36C-1B44-4696-B1D2-FC50DCB44158_1_105_c.jpeg" alt="A white rose among green leaves">
+        <figcaption>
+          <span>A flower photo</span>
+          <span>South Africa</span>
+        </figcaption>
+      </figure>
+    </main>
+
+    <footer>
+      <span>A small page by Kee</span>
+      <span>Made with HTML &amp; CSS</span>
+    </footer>
+  </div>
+</body>
+</html>
